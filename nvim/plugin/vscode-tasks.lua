@@ -8,8 +8,8 @@ require("vstask").setup({
       tab = '<C-t>',
       current = '<C-c>',
   },
+  terminal = 'toggleterm',
   term_opts = {
-	terminal = "floaterm",
 	vertical = {
       direction = "vertical",
       size = "80"

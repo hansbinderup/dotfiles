@@ -52,7 +52,8 @@ Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'jiangmiao/auto-pairs'
 
 " Terminal
-Plug 'voldikss/vim-floaterm'
+" Plug 'voldikss/vim-floaterm'
+Plug 'akinsho/toggleterm.nvim'
 
 " Git stuff
 Plug 'kdheepak/lazygit.nvim'

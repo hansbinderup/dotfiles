@@ -28,14 +28,8 @@ nnoremap <leader>ch :lua vim.lsp.buf.signature_help()<Cr>
 " Clangd commands
 nnoremap <A-o> :ClangdSwitchSourceHeader<Cr>
 
-" Terminal (floaterm) commands
-nnoremap <C-S-t> :call OpenTerminal()<Cr>
-nnoremap <C-t> :FloatermToggle<Cr>
-
-" Remap ESC to leave --- TERMINAL MODE ---
-tnoremap <Esc> <C-\><C-n>
-" Switch windows 'normally' while in --- TERMINAL MODE ---
-tnoremap <C-w> <C-\><C-N><C-w>
+" Terminal (toggleterm) commands
+nnoremap <C-t> :ToggleTerm<Cr>
 
 " VScode tasks
 nnoremap <Leader>ta :lua require("telescope").extensions.vstask.tasks()<CR>
