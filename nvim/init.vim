@@ -52,7 +52,6 @@ Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'jiangmiao/auto-pairs'
 
 " Terminal
-" Plug 'voldikss/vim-floaterm'
 Plug 'akinsho/toggleterm.nvim'
 
 " Git stuff
@@ -75,9 +74,4 @@ Plug 'nvim-telescope/telescope-dap.nvim'
 call plug#end()
 
 colorscheme gruvbox
-
-nnoremap <C-f> :NERDTreeToggle<CR>
-nnoremap <C-k> :Commentary<CR>
-
-luafile ~/.config/nvim/plugin/lsp.lua
 

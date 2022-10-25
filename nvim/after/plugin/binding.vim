@@ -1,7 +1,7 @@
 " Project Search
 nnoremap <leader>fS :lua require'telescope.builtin'.grep_string()<Cr>
-nnoremap <leader>fs :lua require'telescope.builtin'.grep_string({
-                        \search = vim.fn.input("search> ")})<Cr>
+nnoremap <leader>fs :Telescope live_grep<Cr>
+
 " Project files
 nnoremap <leader>pf :TeleScopeProjectFiles<Cr>
 nnoremap <C-p> <cmd>Telescope find_files<Cr>
@@ -24,6 +24,7 @@ nnoremap <leader>cd :lua require'telescope.builtin'.lsp_definitions()<Cr>
 nnoremap <leader>ci :lua require'telescope.builtin'.lsp_implementations()<Cr>
 nnoremap <leader>cr :lua require'telescope.builtin'.lsp_references({path_display=function(opts, path) local tail = require('telescope.utils').path_tail(path) local rel = require('plenary.path'):new(path):make_relative(vim.loop.cwd()) local start = string.match(rel, "(.-)/") return string.format("%s \| %s", start, tail) end,layout_strategy='vertical',layout_config={width=0.95},fname_width=60,trim_text=true})<Cr>
 nnoremap <leader>ch :lua vim.lsp.buf.signature_help()<Cr>
+nnoremap <leader>ref :lua require'telescope.builtin'.lsp_references()<Cr>
 
 " Clangd commands
 nnoremap <A-o> :ClangdSwitchSourceHeader<Cr>
@@ -40,3 +41,9 @@ nnoremap <Leader>tl :lua require('telescope').extensions.vstask.launch()<cr>
 " Git diff view
 nnoremap <leader>gd :DiffviewOpen<CR>
 nnoremap <leader>gdc :DiffviewClose<CR>
+
+" Nerd tree
+nnoremap <C-f> :NERDTreeToggle<CR>
+
+" Commentary
+nnoremap <C-k> :Commentary<CR>
