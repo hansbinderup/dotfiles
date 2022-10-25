@@ -1,14 +1,13 @@
-" This is pretty much just a copy-paste of an example from the creator of
-" nvim-cmp.
-" Others are advised to tweak/evaluate, what they actually want.
-"
-" I've added some different handling for pressing <Tab> to the completion
-" suggestions.
-"
-" I've also added (at the bottom) some completion integration with the clangd
-" lsp server
+ -- This is pretty much just a copy-paste of an example from the creator of
+ -- nvim-cmp.
+ -- Others are advised to tweak/evaluate, what they actually want.
 
-lua << EOF
+ -- I've added some different handling for pressing <Tab> to the completion
+ -- suggestions.
+
+ -- I've also added (at the bottom) some completion integration with the clangd
+ -- lsp server
+
     -- Helpers
     local has_words_before = function()
         local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -63,7 +62,7 @@ lua << EOF
       { name = 'vsnip' }, -- For vsnip users.
     }, {
       { name = 'buffer' },
-    })
+    }),
   })
 
   -- Set configuration for specific filetype.
@@ -98,4 +97,3 @@ lua << EOF
   require'lspconfig'['clangd'].setup{
     capabilities = capabilities
   }
-EOF
