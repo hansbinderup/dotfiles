@@ -22,8 +22,9 @@ require'telescope'.setup {
     }
 }
 
--- Custom cmd to use `git_files()` when available, fallback to `find_files()`
--- vim.cmd('command TeleScopeProjectFiles
--- \       :lua
--- \       local ok = pcall(require'telescope.builtin'.git_files)
--- \       if not ok then require'telescope.builtin'.find_files() end')
+local map = vim.api.nvim_set_keymap
+local default_opts = {noremap = true}
+
+-- Some search bindings for global searches without filters
+vim.api.nvim_set_keymap('n', '<Leader>ff', ":lua require'telescope.builtin'.live_grep{ vimgrep_arguments = { 'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case', '-uu' } }<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>fF', ":lua require'telescope.builtin'.grep_string{ vimgrep_arguments = { 'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case', '-uu' } }<CR>", {noremap = true, silent = true})

@@ -15,7 +15,7 @@ let mapleader = " "
 
 " Searching
 set ignorecase smartcase
-set nohlsearch " stop higlight after search
+set hlsearch
 set incsearch " incremental search
 
 call plug#begin()
@@ -58,6 +58,7 @@ Plug 'akinsho/toggleterm.nvim'
 Plug 'kdheepak/lazygit.nvim'
 Plug 'sindrets/diffview.nvim'
 Plug 'airblade/vim-gitgutter'
+Plug 'APZelos/blamer.nvim'
 
 " VsCode compatibility
 Plug 'EthanJWright/vs-tasks.nvim'

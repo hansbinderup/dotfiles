@@ -3,7 +3,6 @@ nnoremap <leader>fS :lua require'telescope.builtin'.grep_string()<Cr>
 nnoremap <leader>fs :Telescope live_grep<Cr>
 
 " Project files
-nnoremap <leader>pf :TeleScopeProjectFiles<Cr>
 nnoremap <C-p> <cmd>Telescope find_files<Cr>
 nnoremap <leader>fb :Telescope file_browser path=%:p:h<Cr>
 
@@ -43,7 +42,10 @@ nnoremap <leader>gd :DiffviewOpen<CR>
 nnoremap <leader>gdc :DiffviewClose<CR>
 
 " Nerd tree
-nnoremap <C-f> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
 
 " Commentary
 nnoremap <C-k> :Commentary<CR>
+
+" Blamer
+nnoremap <C-b> :BlamerToggle<CR>
