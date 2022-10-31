@@ -21,15 +21,15 @@ dap.configurations.cpp = {
     type = "cppdbg",
     request = "launch",
     pipeTransport = {
-        debuggerPath = "stdbuf -i0 -o0 -e0 /usr/bin/gdb",
+        debuggerPath = "/usr/bin/gdb",
         pipeProgram = "docker",
         pipeArgs = { "run", "-i", "-v", "/workspaces/mozart-fep:/workspaces/mozart-fep", "audiostreamingplatform/mozart-fep:1.41", "bash", "-c" },
         pipeCwd = "/workspaces/mozart-fep/",
     },
     program = function()
-      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+      return vim.fn.input('/workspaces/mozart-fep/')
     end,
-    cwd = "${workspaceFolder}",
+    cwd = "/workspaces/mozart-fep/",
     stopAtEntry = true,
 	setupCommands = setupCommands,
   }
