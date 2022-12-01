@@ -59,7 +59,6 @@ Plug 'akinsho/toggleterm.nvim'
 
 " Git stuff
 Plug 'kdheepak/lazygit.nvim'
-Plug 'sindrets/diffview.nvim'
 Plug 'airblade/vim-gitgutter'
 Plug 'APZelos/blamer.nvim'
 

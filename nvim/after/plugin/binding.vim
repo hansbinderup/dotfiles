@@ -37,10 +37,6 @@ nnoremap <Leader>ti :lua require("telescope").extensions.vstask.inputs()<CR>
 nnoremap <Leader>th :lua require("telescope").extensions.vstask.history()<CR>
 nnoremap <Leader>tl :lua require('telescope').extensions.vstask.launch()<cr>
 
-" Git diff view
-nnoremap <leader>gd :DiffviewOpen<CR>
-nnoremap <leader>gdc :DiffviewClose<CR>
-
 " Commentary
 nnoremap <C-k> :Commentary<CR>
 
