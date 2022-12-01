@@ -10,7 +10,7 @@ nnoremap <leader>fb :Telescope file_browser path=%:p:h<Cr>
 nnoremap <leader>bs :lua require'telescope.builtin'.buffers()<Cr>
 
 " Show hidden files
-nnoremap <leader>geh <cmd>Telescope find_files hidden=true<cr>
+nnoremap <leader>geh <cmd>Telescope find_files hidden=true no_ignore=true<cr>
 
 " Git commands
 nnoremap <leader>gs :lua require'telescope.builtin'.git_status()<Cr>
@@ -40,9 +40,6 @@ nnoremap <Leader>tl :lua require('telescope').extensions.vstask.launch()<cr>
 " Git diff view
 nnoremap <leader>gd :DiffviewOpen<CR>
 nnoremap <leader>gdc :DiffviewClose<CR>
-
-" Nerd tree
-nnoremap <C-f> :NERDTreeFind<CR>
 
 " Commentary
 nnoremap <C-k> :Commentary<CR>

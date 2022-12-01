@@ -10,12 +10,15 @@
 :set scrolloff=8
 :set mouse=
 
+" Increment alphanumeric characters as well
+:set nrformats+=alpha
+
 " set <leader> to SpaceBar
 let mapleader = " "
 
 " Searching
 set ignorecase smartcase
-set hlsearch
+set nohlsearch
 set incsearch " incremental search
 
 call plug#begin()
@@ -26,12 +29,11 @@ Plug 'nvim-lua/popup.nvim'
 
 " UI stuff
 Plug 'morhetz/gruvbox'
-Plug 'preservim/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'nvim-lualine/lualine.nvim'
+Plug 'nvim-tree/nvim-web-devicons'
 
 " lsp kind of stuff
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate :TSInstall jsonc'}
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'neovim/nvim-lspconfig'
 
