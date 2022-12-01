@@ -32,6 +32,7 @@ Plug 'nvim-lualine/lualine.nvim'
 
 " lsp kind of stuff
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate :TSInstall jsonc'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'neovim/nvim-lspconfig'
 
 " Completion/snippets
@@ -65,7 +66,6 @@ Plug 'EthanJWright/vs-tasks.nvim'
 
 " C++ stuff
 Plug 'rhysd/vim-clang-format'
-Plug 'octol/vim-cpp-enhanced-highlight'
 
 " Debugging 
 Plug 'mfussenegger/nvim-dap'
