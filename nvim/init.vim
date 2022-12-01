@@ -49,7 +49,7 @@ Plug 'natecraddock/telescope-zf-native.nvim'
 Plug 'nvim-telescope/telescope-file-browser.nvim'
 
 " QOL
-Plug 'jiangmiao/auto-pairs'
+Plug 'windwp/nvim-autopairs'
 
 " Terminal
 Plug 'akinsho/toggleterm.nvim'
