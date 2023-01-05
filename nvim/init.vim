@@ -77,3 +77,10 @@ call plug#end()
 
 colorscheme gruvbox
 
+" Basic overwrites
+" Always keep cursor centered when jumping - easier to follow
+nnoremap <C-u> <C-u>zz
+nnoremap <C-d> <C-d>zz
+nnoremap <C-o> <C-o>zz
+nnoremap <C-i> <C-i>zz
+
