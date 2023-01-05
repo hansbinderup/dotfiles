@@ -4,10 +4,37 @@ require'telescope'.load_extension('zf-native')
 -- Enable the file_browser extension
 require'telescope'.load_extension('file_browser')
 
+-- Disable preview for big files
+local previewers = require('telescope.previewers')
+local ignore_big_files_maker = function(filepath, bufnr, opts)
+  opts = opts or {}
+
+  filepath = vim.fn.expand(filepath)
+  vim.loop.fs_stat(filepath, function(_, stat)
+    if not stat then return end
+    if stat.size > 100000 then
+      return
+    else
+      previewers.buffer_previewer_maker(filepath, bufnr, opts)
+    end
+  end)
+end
+
+
 -- When the floating view is not wide enough, truncate the paths
 require'telescope'.setup {
     defaults={
-        path_display={
+        mappings = {
+            n = {
+                ['<c-b>'] = require('telescope.actions').delete_buffer
+            },
+            i = {
+                ["<C-h>"] = "which_key",
+                ['<c-b>'] = require('telescope.actions').delete_buffer
+            },
+        },
+        buffer_previewer_maker = ignore_big_files_maker,
+        path_display = {
             "truncate"
         },
         dynamic_preview_title=true

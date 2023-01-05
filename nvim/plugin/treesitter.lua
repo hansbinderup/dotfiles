@@ -9,14 +9,15 @@ if not status_ok then
     return
 end
 
--- require("nvim-treesitter.install").compilers = { "clang" }
-
 configs.setup {
     ensure_installed = "all",
     sync_install = false,
     ignore_install = {}, -- List of parsers to ignore installing
     highlight = {
         enable = true,
+        disable = function(lang, bufnr) -- Disable in large C++ buffers
+            return lang == "cpp" and api.nvim_buf_line_count(bufnr) > 5000
+        end,
         disable = { "" }, -- list of language that will be disabled
         additional_vim_regex_highlighting = true
     },
