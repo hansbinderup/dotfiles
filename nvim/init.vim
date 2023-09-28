@@ -73,6 +73,9 @@ Plug 'mfussenegger/nvim-dap'
 Plug 'theHamsta/nvim-dap-virtual-text'
 Plug 'nvim-telescope/telescope-dap.nvim'
 
+" Remote work
+Plug 'DanielWeidinger/nvim-sshfs'
+
 call plug#end()
 
 colorscheme gruvbox
