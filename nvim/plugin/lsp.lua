@@ -50,6 +50,7 @@ require'lspconfig'['clangd'].setup{
           "--header-insertion=never",
           "--completion-style=detailed",
           "--header-insertion-decorators=0",
-		  "--query-driver=/**/mozart/**/aarch64-mozart-linux-g++,/**/arm-none-eabi-*"
-    }
+		  "--query-driver=/**/mozart*/**/aarch64-mozart-linux-g++,/usr/bin/arm-none-eabi-*,/opt/toolchains/zephyr-sdk-0.16.1/arm-zephyr-eabi/bin/arm-zephyr-eabi-g++"
+    },
+    init_option = { fallbackFlags = { "-std=c++20" } },
 }
