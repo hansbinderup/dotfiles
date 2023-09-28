@@ -1,0 +1,10 @@
+os:
+  editPreset: 'nvim'
+  edit: 'nvim {{filename}}'
+  editAtLine: 'nvim --line={{line}} {{filename}}'
+  editAtLineAndWait: 'nvim --block --line={{line}} {{filename}}'
+  editInTerminal: true
+
+git:
+  commit:
+    signOff: true
