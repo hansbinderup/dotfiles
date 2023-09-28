@@ -39,6 +39,7 @@ nnoremap <Leader>tl :lua require('telescope').extensions.vstask.launch()<cr>
 
 " Commentary
 nnoremap <C-k> :Commentary<CR>
+vnoremap <C-k> :Commentary<CR>
 
 " Blamer
 nnoremap <C-b> :BlamerToggle<CR>
