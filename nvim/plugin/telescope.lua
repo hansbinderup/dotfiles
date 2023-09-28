@@ -4,6 +4,10 @@ require'telescope'.load_extension('zf-native')
 -- Enable the file_browser extension
 require'telescope'.load_extension('file_browser')
 
+-- Enable file grepping with ripgrep args
+-- https://jdhao.github.io/2020/02/16/ripgrep_cheat_sheet/
+require("telescope").load_extension("live_grep_args")
+
 -- Disable preview for big files
 local previewers = require('telescope.previewers')
 local ignore_big_files_maker = function(filepath, bufnr, opts)
@@ -56,5 +60,5 @@ local map = vim.api.nvim_set_keymap
 local default_opts = {noremap = true}
 
 -- Some search bindings for global searches without filters
-vim.api.nvim_set_keymap('n', '<Leader>ff', ":lua require'telescope.builtin'.live_grep{ vimgrep_arguments = { 'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case', '-uu' } }<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<Leader>fF', ":lua require'telescope.builtin'.grep_string{ vimgrep_arguments = { 'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case', '-uu' } }<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>ff', ":lua require('telescope').extensions.live_grep_args.live_grep_args{ vimgrep_arguments = { 'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case', '-uu' } }<CR>", {noremap = true, silent = true})

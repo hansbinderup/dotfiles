@@ -48,6 +48,7 @@ Plug 'hrsh7th/vim-vsnip'
 
 " Telescope
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-live-grep-args.nvim'
 Plug 'natecraddock/telescope-zf-native.nvim'
 Plug 'nvim-telescope/telescope-file-browser.nvim'
 

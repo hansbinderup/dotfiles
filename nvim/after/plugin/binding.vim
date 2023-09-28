@@ -1,6 +1,6 @@
 " Project Search
 nnoremap <leader>fS :lua require'telescope.builtin'.grep_string()<Cr>
-nnoremap <leader>fs :Telescope live_grep<Cr>
+nnoremap <leader>fs :Telescope live_grep_args<Cr>
 
 " Project files
 nnoremap <C-p> <cmd>Telescope find_files<Cr>
