@@ -98,3 +98,14 @@ nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
 
+" Substitute all at cursor
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
+" Start substitute based on marked visually
+vnoremap <Leader>s :s/
+" Append to end when using visual mode (useful for multi line)
+vnoremap <Leader>e :s/$/
+
+" Substitute one occurence at once:
+" Use eg: /search_name <Leader>cgn something_new exit and then hit . to repeat
+" Mapping to do the same
+nnoremap <silent> c<Tab> :let @/=expand('<cword>')<cr>cgn
