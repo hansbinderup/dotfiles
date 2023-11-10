@@ -73,6 +73,8 @@ Plug 'rhysd/vim-clang-format'
 call plug#end()
 
 colorscheme gruvbox
+" Use terminal background instead
+highlight Normal ctermbg=NONE
 
 " Basic overwrites
 " Always keep cursor centered when jumping - easier to follow

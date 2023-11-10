@@ -9,7 +9,8 @@
     "modules-left": [
         "hyprland/workspaces",
         "cpu",
-        "memory"
+        "memory",
+        "custom/spotify"
     ],
     "modules-center": ["hyprland/window"],
     "modules-right": [
@@ -17,12 +18,16 @@
         "pulseaudio",
         "pulseaudio#microphone",
         "battery",
-        "network",
+        "network#wlan",
+        "network#eth",
+        "network#usb",
+        "bluetooth",
         "clock"
     ],
 
     "hyprland/window": {
-        "format": "{}"
+        "format": "{}",
+        "max-length": 50
     },
     "hyprland/workspaces": {
         "disable-scroll": true,
@@ -92,7 +97,7 @@
         "format-full": "󰂅 {capacity}%",
         "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
 	},
-    "network": {
+    "network#wlan": {
         "interface": "wlan0",
         "format": "{ifname}",
         "format-wifi": "  ({signalStrength}%)",
@@ -100,9 +105,44 @@
         "format-disconnected": "", //An empty format will hide the module.
         "format-disconnected": "",
         "tooltip-format": "{ifname}",
-        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) \n\n{ipaddr}",
         "tooltip-format-ethernet": "{ifname} ",
-        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50
+   },
+   "network#eth": {
+        "interface": "enp8s0u1u3u3",
+        "format": "{ifname}",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "", //An empty format will hide the module.
+        "tooltip-format": "{ifname}",
+        "tooltip-format-ethernet": "{ifname} \n\n{ipaddr}",
+        "max-length": 50
+   },
+    "network#usb": {
+        "interface": "enp0s20f0u4c4i2",
+        "max-length": 50,
+        "format": "",
+        "format-ethernet": "USB ",
+        "format-disconnected": "",
+        "tooltip-format": "",
+        "tooltip-format-ethernet": "Ifname:\t{ifname}\nNMask:\t{netmask}"
+    },  
+    "bluetooth": {
+        "format": "",
+        "format-connected": "",
+        "format-connected-battery": " {device_battery_percentage}%",
+        "tooltip-format": "Status\t{status}\n{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "Status\t{status}\n{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+    },
+    "custom/spotify": {
+        "exec": "/usr/bin/python3 ~/.config/waybar/mediaplayer.py --player spotify",
+        "format": "{}",
+        "return-type": "json",
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous",
         "max-length": 50
     }
 }
