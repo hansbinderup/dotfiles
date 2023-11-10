@@ -8,6 +8,9 @@ require'telescope'.load_extension('file_browser')
 -- https://jdhao.github.io/2020/02/16/ripgrep_cheat_sheet/
 require("telescope").load_extension("live_grep_args")
 
+-- Use telescope extension for harpoon
+require("telescope").load_extension('harpoon')
+
 -- Disable preview for big files
 local previewers = require('telescope.previewers')
 local ignore_big_files_maker = function(filepath, bufnr, opts)

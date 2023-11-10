@@ -54,6 +54,7 @@ Plug 'nvim-telescope/telescope-file-browser.nvim'
 
 " QOL
 Plug 'windwp/nvim-autopairs'
+Plug 'ThePrimeagen/harpoon'
 
 " Terminal
 Plug 'akinsho/toggleterm.nvim'
