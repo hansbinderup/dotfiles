@@ -1,4 +1,5 @@
 require'lspconfig'.clangd.setup{}
+require'lspconfig'.dartls.setup{}
 
 -- vim.lsp.set_log_level("debug")
 
@@ -53,4 +54,9 @@ require'lspconfig'['clangd'].setup{
 		  "--query-driver=/**/mozart*/**/aarch64-mozart-linux-g++,/usr/bin/arm-none-eabi-*,/opt/toolchains/zephyr-sdk-0.16.1/arm-zephyr-eabi/bin/arm-zephyr-eabi-g++"
     },
     init_option = { fallbackFlags = { "-std=c++20" } },
+}
+
+-- Dart
+require'lspconfig'['dartls'].setup{
+	on_attach = on_attach,
 }

@@ -70,6 +70,8 @@ Plug 'EthanJWright/vs-tasks.nvim'
 " C++ stuff
 Plug 'rhysd/vim-clang-format'
 
+" Dart stuff
+Plug 'dart-lang/dart-vim-plugin'
 call plug#end()
 
 colorscheme gruvbox
