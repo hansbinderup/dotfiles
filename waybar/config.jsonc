@@ -27,7 +27,8 @@
 
     "hyprland/window": {
         "format": "{}",
-        "max-length": 50
+        "max-length": 50,
+        "separate-outputs": true
     },
     "hyprland/workspaces": {
         "disable-scroll": true,
@@ -52,7 +53,7 @@
         "spacing": 10
     },
     "clock": {
-        "format": "{: %R   %d/%m}",
+        "format": " {:%R   %d/%m}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "pulseaudio": {
@@ -66,8 +67,8 @@
         "scroll-step": 5,
         "format-icons": {
             "headphone": "",
-            "hands-free": "",
-            "headset": "",
+            "hands-free": "󰋎",
+            "headset": "󰋎",
             "phone": "",
             "portable": "",
             "car": "",
@@ -98,19 +99,18 @@
         "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
 	},
     "network#wlan": {
-        "interface": "wlan0",
+        "interface": "wlan*",
         "format": "{ifname}",
         "format-wifi": "  ({signalStrength}%)",
         "format-ethernet": "{ifname} ",
         "format-disconnected": "", //An empty format will hide the module.
-        "format-disconnected": "",
         "tooltip-format": "{ifname}",
         "tooltip-format-wifi": "{essid} ({signalStrength}%) \n\n{ipaddr}",
         "tooltip-format-ethernet": "{ifname} ",
         "max-length": 50
    },
    "network#eth": {
-        "interface": "enp8s0u1u3u3",
+        "interface": "eth*",
         "format": "{ifname}",
         "format-ethernet": "󰈀",
         "format-disconnected": "", //An empty format will hide the module.
@@ -119,13 +119,13 @@
         "max-length": 50
    },
     "network#usb": {
-        "interface": "enp0s20f0u4c4i2",
+        "interface": "enp*",
         "max-length": 50,
         "format": "",
         "format-ethernet": "USB ",
         "format-disconnected": "",
         "tooltip-format": "",
-        "tooltip-format-ethernet": "Ifname:\t{ifname}\nNMask:\t{netmask}"
+        "tooltip-format-ethernet": "Ifname:\t{ifname}\nIpaddr:\t{ipaddr}\nNMask:\t{netmask}"
     },  
     "bluetooth": {
         "format": "",
