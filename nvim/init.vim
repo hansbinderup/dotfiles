@@ -62,7 +62,7 @@ Plug 'akinsho/toggleterm.nvim'
 " Git stuff
 Plug 'kdheepak/lazygit.nvim'
 Plug 'airblade/vim-gitgutter'
-Plug 'APZelos/blamer.nvim'
+Plug 'f-person/git-blame.nvim'
 
 " VsCode compatibility
 Plug 'EthanJWright/vs-tasks.nvim'

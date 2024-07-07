@@ -42,7 +42,7 @@ nnoremap <C-k> :Commentary<CR>
 vnoremap <C-k> :Commentary<CR>
 
 " Blamer
-nnoremap <C-b> :BlamerToggle<CR>
+nnoremap <C-b> :GitBlameToggle<CR>
 
 " Harpoon
 nnoremap <Leader>gh :Telescope harpoon marks<CR>
