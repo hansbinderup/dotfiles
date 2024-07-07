@@ -1,6 +1,6 @@
 # NOTEBOOK SETTINGS
 [notebook]
-dir = "~/Documents/notes"
+dir = "~/repos/zk-notes/"
 
 # NOTE SETTINGS
 [note]
