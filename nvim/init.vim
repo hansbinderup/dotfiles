@@ -72,6 +72,7 @@ Plug 'rhysd/vim-clang-format'
 
 " Dart stuff
 Plug 'dart-lang/dart-vim-plugin'
+
 call plug#end()
 
 colorscheme gruvbox
@@ -107,3 +108,8 @@ vnoremap <Leader>e :s/$/
 " Use eg: /search_name <Leader>cgn something_new exit and then hit . to repeat
 " Mapping to do the same
 nnoremap <silent> c<Tab> :let @/=expand('<cword>')<cr>cgn
+
+nnoremap <C-Up> :tabnew<cr>
+nnoremap <Leader><Down> :tabclose<cr>
+nnoremap <C-Right> :+tabnext<cr>
+nnoremap <C-Left> :-tabnext<cr>

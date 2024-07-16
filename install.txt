@@ -1,0 +1,3 @@
+dunst wofi waybar zk lazygit pamixer pavucontrol playerctl python-gobjects bluez bluez-utils libnotify wl-clipboard
+
+yay grimshot
