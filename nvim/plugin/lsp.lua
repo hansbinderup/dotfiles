@@ -1,13 +1,3 @@
-require'lspconfig'.clangd.setup{}
-require'lspconfig'.pylsp.setup{}
--- require'lspconfig'.bashls.setup{}
-require'lspconfig'.lua_ls.setup{}
-require'lspconfig'.dartls.setup{}
--- require'lspconfig'.marksman.setup{}
--- require'lspconfig'.cmake.setup{}
-
--- vim.lsp.set_log_level("debug")
-
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
@@ -47,8 +37,11 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 
--- C/C++
-require'lspconfig'['clangd'].setup{
+-- FIXME: do I need this?
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+vim.lsp.enable('clangd')
+vim.lsp.config('clangd', {
 	on_attach = on_attach,
     cmd={ "clangd",
           "-j=3",
@@ -59,9 +52,15 @@ require'lspconfig'['clangd'].setup{
 		  "--query-driver=/**/mozart/**/aarch64-mozart-linux-g++,/usr/bin/arm-none-eabi-*,/opt/toolchains/zephyr-sdk-0.16.5/arm-zephyr-eabi/bin/arm-zephyr-eabi-g++"
     },
     init_option = { fallbackFlags = { "-std=c++20" } },
-}
+    -- capabilities = capabilities,
+})
 
--- Dart
-require'lspconfig'['dartls'].setup{
-	on_attach = on_attach,
-}
+-- FIXME: remember to enable these when used..
+-- vim.lsp.config('dartls', { on_attach = on_attach })
+-- vim.lsp.config('pylsp', { on_attach = on_attach })
+-- vim.lsp.config('lua_ls', { on_attach = on_attach })
+-- vim.lsp.config('cmake', { on_attach = on_attach })
+-- vim.lsp.config('bashls', { on_attach = on_attach })
+
+-- vim.lsp.set_log_level("debug")
+

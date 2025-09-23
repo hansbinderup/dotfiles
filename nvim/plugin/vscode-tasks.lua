@@ -1,28 +1,29 @@
 require("vstask").setup({
-  cache_strategy = "last", -- can be "most" or "last" (most used / last used)
-  use_harpoon = false, -- use harpoon to auto cache terminals
-  telescope_keys = { -- change the telescope bindings used to launch tasks
-      horizontal = '<C-h>',
-	  vertical = '<C-v>',
-      split = '<CR>',
-      tab = '<C-t>',
-      current = '<C-c>',
-  },
-  terminal = 'toggleterm',
-  term_opts = {
-	vertical = {
-      direction = "vertical",
-      size = "80"
+    cache_strategy = "last", -- can be "most" or "last" (most used / last used)
+    use_harpoon = false, -- use harpoon to auto cache terminals
+    telescope_keys = { -- change the telescope bindings used to launch tasks
+        horizontal = '<C-t>',
+        vertical = '<C-v>',
+        split = '<C-s>',
+        tab = '<CR>',
+        current = '<C-c>',
     },
-    horizontal = {
-      direction = "horizontal",
-      size = "15"
-    },
-    current = {
-      direction = "float",
-    },
-    tab = {
-      direction = 'tab',
+    ignore_input_default = false,
+    terminal = 'nvim',
+    term_opts = {
+        vertical = {
+            direction = "vertical",
+            size = "20"
+        },
+        horizontal = {
+            direction = "horizontal",
+            size = "20"
+        },
+        current = {
+            direction = "float",
+        },
+        tab = {
+            direction = 'tab',
+        },
     }
-  }
 })

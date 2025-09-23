@@ -113,3 +113,6 @@ nnoremap <C-Up> :tabnew<cr>
 nnoremap <Leader><Down> :tabclose<cr>
 nnoremap <C-Right> :+tabnext<cr>
 nnoremap <C-Left> :-tabnext<cr>
+
+" allow qutting terminal mode with double escape
+tnoremap <Esc><Esc> <C-\><C-n>
