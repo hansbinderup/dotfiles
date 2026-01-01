@@ -57,8 +57,6 @@ Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'windwp/nvim-autopairs'
 Plug 'ThePrimeagen/harpoon'
 
-" Terminal
-Plug 'akinsho/toggleterm.nvim'
 
 " Git stuff
 Plug 'kdheepak/lazygit.nvim'

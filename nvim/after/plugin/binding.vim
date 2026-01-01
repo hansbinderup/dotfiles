@@ -28,10 +28,6 @@ nnoremap <leader>ref :lua require'telescope.builtin'.lsp_references()<Cr>
 " Clangd commands
 nnoremap <A-o> :ClangdSwitchSourceHeader<Cr>
 
-" Terminal (toggleterm) commands
-nnoremap <C-t> :ToggleTerm<Cr>
-
-
 " Commentary
 nnoremap <C-k> :Commentary<CR>
 vnoremap <C-k> :Commentary<CR>
