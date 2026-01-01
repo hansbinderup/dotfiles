@@ -103,10 +103,19 @@ vnoremap <Leader>e :s/$/
 " Mapping to do the same
 nnoremap <silent> c<Tab> :let @/=expand('<cword>')<cr>cgn
 
-nnoremap <C-Up> :tabnew<cr>
-nnoremap <Leader><Down> :tabclose<cr>
-nnoremap <C-Right> :+tabnext<cr>
-nnoremap <C-Left> :-tabnext<cr>
+" commented out - using tmux for this instead
+" nnoremap <C-Up> :tabnew<cr>
+" nnoremap <Leader><Down> :tabclose<cr>
+" nnoremap <C-Right> :+tabnext<cr>
+" nnoremap <C-Left> :-tabnext<cr>
 
-" allow qutting terminal mode with double escape
-tnoremap <Esc><Esc> <C-\><C-n>
+" default is awkward on nordic keyboard
+tnorema <C-q> <C-\><C-n>
+
+" Disable PageUp and PageDown - also awkward on nordic
+nnoremap <PageUp> <Nop>
+nnoremap <PageDown> <Nop>
+inoremap <PageUp> <Nop>
+inoremap <PageDown> <Nop>
+vnoremap <PageUp> <Nop>
+vnoremap <PageDown> <Nop>

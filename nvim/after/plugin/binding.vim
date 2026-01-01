@@ -19,8 +19,8 @@ nnoremap <leader>gac :lua require'telescope.builtin'.git_commits()<Cr>
 nnoremap <leader>gb :lua require'telescope.builtin'.git_branches()<Cr>
 
 " LSP commands
-nnoremap <leader>cd :lua require'telescope.builtin'.lsp_definitions()<Cr>
-nnoremap <leader>ci :lua require'telescope.builtin'.lsp_implementations()<Cr>
+" nnoremap <leader>cd :lua require'telescope.builtin'.lsp_definitions()<Cr>
+" nnoremap <leader>ci :lua require'telescope.builtin'.lsp_implementations()<Cr>
 nnoremap <leader>cr :lua require'telescope.builtin'.lsp_references({path_display=function(opts, path) local tail = require('telescope.utils').path_tail(path) local rel = require('plenary.path'):new(path):make_relative(vim.loop.cwd()) local start = string.match(rel, "(.-)/") return string.format("%s \| %s", start, tail) end,layout_strategy='vertical',layout_config={width=0.95},fname_width=60,trim_text=true})<Cr>
 nnoremap <leader>ch :lua vim.lsp.buf.signature_help()<Cr>
 nnoremap <leader>ref :lua require'telescope.builtin'.lsp_references()<Cr>
@@ -35,3 +35,8 @@ vnoremap <C-k> :Commentary<CR>
 " Blamer
 nnoremap <C-b> :GitBlameToggle<CR>
 
+" Copilot
+imap <silent> <C-a> <Plug>(copilot-accept-word)
+imap <silent> <C-c> <Plug>(copilot-accept-line)
+imap <C-z> <Plug>(copilot-next)
+imap <C-x> <Plug>(copilot-previous)

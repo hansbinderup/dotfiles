@@ -15,10 +15,10 @@ local on_attach = function(client, bufnr)
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   local bufopts = { noremap=true, silent=true, buffer=bufnr }
-  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+  vim.keymap.set('n', 'cD', vim.lsp.buf.declaration, bufopts)
+  vim.keymap.set('n', 'cd', vim.lsp.buf.definition, bufopts)
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+  vim.keymap.set('n', 'cI', vim.lsp.buf.implementation, bufopts)
   vim.keymap.set('i', '<C-k>', vim.lsp.buf.signature_help, bufopts)
   vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
   vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
@@ -37,6 +37,8 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 
+local lspconfig = require("lspconfig")
+
 -- FIXME: do I need this?
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
@@ -49,10 +51,16 @@ vim.lsp.config('clangd', {
           "--header-insertion=never",
           "--completion-style=detailed",
           "--header-insertion-decorators=0",
-		  "--query-driver=/**/mozart/**/aarch64-mozart-linux-g++,/usr/bin/arm-none-eabi-*,/opt/toolchains/zephyr-sdk-0.16.5/arm-zephyr-eabi/bin/arm-zephyr-eabi-g++"
+		  "--query-driver=/**/mozart/**/aarch64-mozart-linux-g++/**/mozart**/x86_64-mozart-linux-g++,/opt/toolchains/zephyr**/arm-zephyr-eabi/bin/arm-zephyr-eabi-*,/usr/bin/arm-none-eabi-*",
     },
     init_option = { fallbackFlags = { "-std=c++20" } },
-    -- capabilities = capabilities,
+    capabilities = capabilities,
+})
+
+vim.lsp.enable('rust_analyzer')
+vim.lsp.config('rust_analyzer', {
+	on_attach = on_attach,
+    capabilities = capabilities,
 })
 
 -- FIXME: remember to enable these when used..
