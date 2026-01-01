@@ -35,9 +35,3 @@ vnoremap <C-k> :Commentary<CR>
 " Blamer
 nnoremap <C-b> :GitBlameToggle<CR>
 
-" Harpoon
-nnoremap <Leader>gh :Telescope harpoon marks<CR>
-nnoremap <C-ø> :lua require("harpoon.ui").nav_next()<CR>
-nnoremap <C-æ> :lua require("harpoon.ui").nav_prev()<CR>
-nnoremap <Leader>ga :lua require("harpoon.mark").add_file()<CR>
-nnoremap <Leader>gr :lua require("harpoon.mark").rm_file()<CR>

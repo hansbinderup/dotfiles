@@ -55,8 +55,6 @@ Plug 'nvim-telescope/telescope-file-browser.nvim'
 
 " QOL
 Plug 'windwp/nvim-autopairs'
-Plug 'ThePrimeagen/harpoon'
-
 
 " Git stuff
 Plug 'kdheepak/lazygit.nvim'
