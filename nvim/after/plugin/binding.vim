@@ -31,11 +31,6 @@ nnoremap <A-o> :ClangdSwitchSourceHeader<Cr>
 " Terminal (toggleterm) commands
 nnoremap <C-t> :ToggleTerm<Cr>
 
-" VScode tasks
-nnoremap <Leader>ta :lua require("telescope").extensions.vstask.tasks()<CR>
-nnoremap <Leader>ti :lua require("telescope").extensions.vstask.inputs()<CR>
-nnoremap <Leader>th :lua require("telescope").extensions.vstask.history()<CR>
-nnoremap <Leader>tl :lua require('telescope').extensions.vstask.launch()<cr>
 
 " Commentary
 nnoremap <C-k> :Commentary<CR>

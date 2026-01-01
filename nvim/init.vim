@@ -65,9 +65,6 @@ Plug 'kdheepak/lazygit.nvim'
 Plug 'airblade/vim-gitgutter'
 Plug 'f-person/git-blame.nvim'
 
-" VsCode compatibility
-Plug 'EthanJWright/vs-tasks.nvim'
-
 " C++ stuff
 Plug 'rhysd/vim-clang-format'
 
