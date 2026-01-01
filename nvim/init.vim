@@ -36,6 +36,7 @@ Plug 'nvim-tree/nvim-web-devicons'
 " lsp kind of stuff
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'neovim/nvim-lspconfig'
+Plug 'dhananjaylatkar/cscope_maps.nvim'
 
 " Completion/snippets
 Plug 'hrsh7th/cmp-nvim-lsp'
