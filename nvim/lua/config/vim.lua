@@ -17,17 +17,11 @@ vim.opt.scrolloff = 8
 vim.opt.mouse = "" -- disable mouse
 vim.opt.nrformats:append("alpha")
 
-
 -- Searching
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
-
-vim.cmd.colorscheme("gruvbox")
-
--- Use terminal background instead
-vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
 
 -- =========================
 --  Key mappings
