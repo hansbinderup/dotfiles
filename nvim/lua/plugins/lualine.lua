@@ -1,6 +1,9 @@
 return {
   "nvim-lualine/lualine.nvim",
-  dependencies = { "f-person/git-blame.nvim" },
+  dependencies = {
+        "f-person/git-blame.nvim",
+        'nvim-tree/nvim-web-devicons'
+  },
   event = "VeryLazy",
 
   config = function()
