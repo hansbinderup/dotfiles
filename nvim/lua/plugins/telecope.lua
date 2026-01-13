@@ -97,7 +97,10 @@ return {
           '--line-number',
           '--column',
           '--smart-case',
-          '-uu'
+          '-uu',
+
+          -- excludes (add more globs as needed)
+          '--glob', '!cscope*',
         }
       })
     end, silent)
@@ -111,7 +114,10 @@ return {
           '--line-number',
           '--column',
           '--smart-case',
-          '-uu'
+          '-uu',
+
+          -- excludes (add more globs as needed)
+          '--glob', '!cscope*',
         }
       })
     end, silent)
@@ -162,15 +168,6 @@ return {
         no_ignore = true,
       })
     end, silent)
-
-    -- =========================
-    -- Git
-    -- =========================
-
-    map("n", "<leader>gs", builtin.git_status, silent)
-    map("n", "<leader>gc", builtin.git_bcommits, silent)
-    map("n", "<leader>gac", builtin.git_commits, silent)
-    map("n", "<leader>gb", builtin.git_branches, silent)
 
     -- =========================
     -- LSP
