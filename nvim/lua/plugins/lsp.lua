@@ -51,7 +51,7 @@ return {
                     "--header-insertion=never",
                     "--completion-style=detailed",
                     "--header-insertion-decorators=0",
-                    "--query-driver=/**/mozart/**/aarch64-mozart-linux-g++/**/mozart**/x86_64-mozart-linux-g++,/opt/toolchains/zephyr**/arm-zephyr-eabi/bin/arm-zephyr-eabi-*,/usr/bin/arm-none-eabi-*",
+                    "--query-driver=/**/mozart/**/aarch64-mozart-linux-g++,/**/mozart**/x86_64-mozart-linux-g++,/opt/toolchains/zephyr**/arm-zephyr-eabi/bin/arm-zephyr-eabi-*,/usr/bin/arm-none-eabi-*",
                 },
                 init_option = { fallbackFlags = { "-std=c++20" } },
                 capabilities = capabilities,
