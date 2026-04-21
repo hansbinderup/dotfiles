@@ -3,52 +3,18 @@
 {
   imports =
     [
-      ./hardware-configuration.nix
-      ./intune.nix
+      ./hardware/work-laptop.nix
+      ./services/git.nix
+      ./services/network.nix
     ];
 
   nixpkgs.config.allowUnfree = true;
 
-  # FIXME: only required for work pc
-  bogo.intune.enable = true;
-
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.initrd.luks.devices.cryptroot.device = "/dev/disk/by-uuid/cf691ebe-a260-4d11-8fc7-85e21e13c729";
-  boot.initrd.services.lvm.enable = true;
-
-  networking.hostName = "nixos"; # Define your hostname.
-  networking.networkmanager.enable = false;
-  networking.wireless.iwd.enable = true;
-
-  networking.wireless.iwd.settings = {
-    Network = {
-      EnableIPv6 = true;
-    };
-    Settings = {
-      AutoConnect = true;
-    };
-  };
-
   # Set your time zone.
   time.timeZone = "Europe/Copenhagen";
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Select internationalisation properties.
-#   i18n.defaultLocale = "en_US.UTF-8";
-#   console = {
-#     font = "fira-code";
-#     keyMap = "dk";
-#     useXkbConfig = true; # use xkb.options in tty.
-#   };
-
-  # Enable the X11 windowing system.
-  # services.xserver.enable = true;
-
 
   fonts.packages = with pkgs; [
     nerd-fonts.fira-code
@@ -106,7 +72,6 @@
     neovim
     wget
     kitty
-    git
     wofi
     dunst
     hyprpaper
@@ -131,7 +96,6 @@
     libnotify
     jq
     python3
-    gh
     tio
     github-copilot-cli
     adwaita-icon-theme
