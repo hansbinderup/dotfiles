@@ -5,8 +5,16 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [ 
+      (modulesPath + "/installer/scan/not-detected.nix")
+      ../services/intune.nix
     ];
+
+  bogo.intune.enable = true;
+
+  boot.initrd.luks.devices.cryptroot.device = "/dev/disk/by-uuid/cf691ebe-a260-4d11-8fc7-85e21e13c729";
+  boot.initrd.services.lvm.enable = true;
+
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ "dm-snapshot" ];
