@@ -6,6 +6,8 @@
       ./hardware/work-laptop.nix
       ./services/git.nix
       ./services/network.nix
+      ./services/bash.nix
+      ./services/neovim.nix
     ];
 
   nixpkgs.config.allowUnfree = true;
@@ -61,15 +63,8 @@
 
   programs.firefox.enable = true;
   programs.hyprland.enable = true;
-  programs.bash.enable = true;
-  programs.bash.interactiveShellInit = ''
-   if [ -f "$HOME/.secrets/github_token" ]; then
-     export GITHUB_TOKEN="$(cat $HOME/.secrets/github_token)"
-   fi
-  '';
 
   environment.systemPackages = with pkgs; [
-    neovim
     wget
     kitty
     wofi
@@ -77,12 +72,8 @@
     hyprpaper
     tmux
     waybar
-    ripgrep
     lazygit
-    fzf
-    gnumake
     cmake
-    gcc
     fastfetch
     pavucontrol
     playerctl
