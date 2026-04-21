@@ -1,2 +1,0 @@
-iwd git openssh neovim hyprland hyprpaper swaylock swayidle brightnessctl ripgrep dunst wofi waybar zk lazygit pamixer pavucontrol playerctl bluez bluez-utils libnotify wl-clipboard ttf-firacode-nerd wireplumber fzf grim slurp jq bat 
-
