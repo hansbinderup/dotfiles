@@ -21,4 +21,14 @@
   environment.systemPackages = with pkgs; [
     eza
   ];
+
+  # pragmatic exception to nixos' store philosophy
+  # otherwise we'll get bad interpretation issues..
+  # seems like the "standard" fix
+  system.activationScripts.binbash = {
+    deps = [ "binsh" ];
+    text = ''
+      ln -sf ${pkgs.bash}/bin/bash /bin/bash
+    '';
+  };
 }
