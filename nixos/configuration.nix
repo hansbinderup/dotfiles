@@ -53,6 +53,7 @@
   }];
 
   services.libinput.enable = true;
+  services.avahi.enable = true;
 
   # docker setup
   virtualisation.docker.enable = true;
