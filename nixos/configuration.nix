@@ -4,6 +4,7 @@
   imports =
     [
       ./hardware/work-laptop.nix
+      ./services/kernel.nix
       ./services/git.nix
       ./services/network.nix
       ./services/bash.nix
@@ -36,6 +37,7 @@
   services.pipewire = {
     enable = true;
     pulse.enable = true;
+    alsa.enable = true;
     wireplumber.enable = true;
   };
 
