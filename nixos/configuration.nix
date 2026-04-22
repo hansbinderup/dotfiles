@@ -11,6 +11,7 @@
       ./services/neovim.nix
       ./services/aliasx.nix
       ./services/tmux.nix
+      ./services/github-copilot.nix
     ];
 
   nixpkgs.config.allowUnfree = true;
@@ -91,7 +92,6 @@
     jq
     python3
     tio
-    github-copilot-cli
     adwaita-icon-theme
  ];
 
