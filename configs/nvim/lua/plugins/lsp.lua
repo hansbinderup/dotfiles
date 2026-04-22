@@ -51,9 +51,9 @@ return {
                     "--header-insertion=never",
                     "--completion-style=detailed",
                     "--header-insertion-decorators=0",
-                    "--query-driver=**",
+                    "--query-driver=/**",
                 },
-                init_option = { fallbackFlags = { "-std=c++20" } },
+                init_options = { fallbackFlags = { "-std=c++20" } },
                 capabilities = capabilities,
             })
 
