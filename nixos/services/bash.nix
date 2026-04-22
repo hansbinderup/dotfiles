@@ -7,6 +7,9 @@
             if [ -f "$HOME/.secrets/github_token" ]; then
                 export GITHUB_TOKEN="$(cat $HOME/.secrets/github_token)"
             fi
+            if [ -d "$HOME/repos/beo-scripts" ]; then
+                export PATH="$HOME/repos/beo-scripts:$PATH"
+            fi
         '';
         shellAliases = {
             ls = "eza -F";
