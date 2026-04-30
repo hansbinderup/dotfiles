@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, username, ... }:
 
 {
   imports =
@@ -54,7 +54,7 @@
   virtualisation.docker.rootless.enable = true;
   virtualisation.docker.storageDriver = "btrfs";
 
-  users.users.habi = {
+  users.users.${username} = {
     isNormalUser = true;
     extraGroups = [ "wheel" "docker" "uucp" "dialout" "video" "netdev" ];
     packages = with pkgs; [
