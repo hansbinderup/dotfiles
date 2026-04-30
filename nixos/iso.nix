@@ -1,4 +1,4 @@
-{ pkgs, self, ... }:
+{ pkgs, lib, self, ... }:
 
 let
   installScript = pkgs.writeShellScriptBin "install-nixos" ''
@@ -67,13 +67,13 @@ in
   ];
 
   # Use iwd instead of NetworkManager for wireless
-  networking.networkmanager.enable = false;
-  networking.wireless.iwd.enable = true;
+  networking.networkmanager.enable = lib.mkForce false;
+  networking.wireless.iwd.enable = lib.mkForce true;
 
   # Embed the dotfiles repo into the ISO at /etc/dotfiles
   environment.etc."dotfiles".source = self;
 
-  isoImage.isoBaseName = "nixos-installer";
+  isoImage.isoBaseName = lib.mkForce "nixos-installer";
   isoImage.appendToMenuLabel = " NixOS Installer";
 
   # Autologin on the ISO for convenience
