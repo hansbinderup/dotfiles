@@ -88,6 +88,8 @@
     python3
     tio
     adwaita-icon-theme
+    unzip
+    zk
  ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
