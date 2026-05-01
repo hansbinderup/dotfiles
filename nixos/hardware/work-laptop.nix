@@ -5,41 +5,49 @@
 
 {
   imports =
-    [ 
-      (modulesPath + "/installer/scan/not-detected.nix")
-      ../services/intune.nix
+    [ (modulesPath + "/installer/scan/not-detected.nix")
+    ../services/intune.nix
     ];
 
   bogo.intune.enable = true;
-
-  boot.initrd.luks.devices.cryptroot.device = "/dev/disk/by-uuid/cf691ebe-a260-4d11-8fc7-85e21e13c729";
-  boot.initrd.services.lvm.enable = true;
-
-
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ "dm-snapshot" ];
+  boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/mapper/vg0-nixos--root";
+    { device = "/dev/mapper/cryptroot";
       fsType = "btrfs";
+      options = [ "subvol=@" ];
+    };
+
+  boot.initrd.luks.devices."cryptroot".device = "/dev/disk/by-uuid/955a0b60-3b3f-4eef-beef-251549a9847c";
+
+  fileSystems."/home" =
+    { device = "/dev/mapper/cryptroot";
+      fsType = "btrfs";
+      options = [ "subvol=@home" ];
+    };
+
+  fileSystems."/nix" =
+    { device = "/dev/mapper/cryptroot";
+      fsType = "btrfs";
+      options = [ "subvol=@nix" ];
+    };
+
+  fileSystems."/swap" =
+    { device = "/dev/mapper/cryptroot";
+      fsType = "btrfs";
+      options = [ "subvol=@swap" ];
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/2247-9207";
+    { device = "/dev/disk/by-uuid/4487-FF36";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
-  fileSystems."/home" =
-    { device = "/dev/mapper/vg0-nixos--home";
-      fsType = "btrfs";
-    };
-
-  swapDevices =
-    [ { device = "/dev/mapper/vg0-swap"; }
-    ];
+  swapDevices = [ ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
