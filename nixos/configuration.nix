@@ -14,6 +14,7 @@
       ./services/github-copilot.nix
       ./services/openconnect.nix
       ./services/audio.nix
+      ./services/jlink.nix
     ];
 
   nixpkgs.config.allowUnfree = true;
@@ -56,7 +57,7 @@
 
   users.users.habi = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" "uucp" "dialout" "video" "netdev" ];
+    extraGroups = [ "wheel" "docker" "uucp" "dialout" "video" "netdev" "plugdev" ];
     packages = with pkgs; [
       tree
     ];
