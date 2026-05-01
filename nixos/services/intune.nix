@@ -60,6 +60,7 @@ in
     programs.dconf.enable = true;
     services.gnome.gnome-keyring.enable = true;
 
+    systemd.services.microsoft-identity-device-broker.enable = true;
     systemd.services.microsoft-identity-device-broker.environment = {
       GIO_EXTRA_MODULES = "${pkgs.glib-networking}/lib/gio/modules";
       SSL_CERT_FILE = "/etc/ssl/certs/ca-certificates.crt";
