@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   nixpkgs.config.allowUnfree = true;
@@ -11,4 +11,9 @@
   environment.systemPackages = with pkgs; [
       segger-jlink
   ];
+
+  services.udev = {
+      packages = [ pkgs.segger-jlink ];
+  };
+
 }
