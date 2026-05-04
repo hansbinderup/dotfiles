@@ -66,6 +66,9 @@
   programs.firefox.enable = true;
   programs.hyprland.enable = true;
 
+  # hint electron apps to use wayland
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
   environment.systemPackages = with pkgs; [
     wget
     kitty
