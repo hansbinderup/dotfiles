@@ -74,6 +74,7 @@
     hyprpaper
     waybar
     lazygit
+    bitwarden-cli
     cmake
     libgcc
     gcc-arm-embedded
