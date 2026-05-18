@@ -14,6 +14,7 @@
       ./services/github-copilot.nix
       ./services/openconnect.nix
       ./services/audio.nix
+      ./services/docker.nix
       ./services/jlink.nix
     ];
 
@@ -49,11 +50,6 @@
   services.avahi.enable = true;
   services.avahi.nssmdns4 = true;
   services.avahi.openFirewall = true;
-
-  # docker setup
-  virtualisation.docker.enable = true;
-  virtualisation.docker.rootless.enable = true;
-  virtualisation.docker.storageDriver = "btrfs";
 
   users.users.habi = {
     isNormalUser = true;
