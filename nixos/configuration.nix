@@ -38,7 +38,6 @@
   hardware.enableRedistributableFirmware = true;
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
-
   # increase ulimit
   security.pam.loginLimits = [{
     domain = "*";
@@ -54,6 +53,7 @@
 
   users.users.habi = {
     isNormalUser = true;
+    description = "Hans Binderup";
     extraGroups = [ "wheel" "docker" "uucp" "dialout" "video" "netdev" "plugdev" ];
     packages = with pkgs; [
       tree
@@ -92,6 +92,7 @@
     adwaita-icon-theme
     unzip
     zk
+    openssl
  ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
