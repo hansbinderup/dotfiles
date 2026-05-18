@@ -16,6 +16,7 @@
       ./services/audio.nix
       ./services/docker.nix
       ./services/jlink.nix
+      ./services/saleae-logic.nix
     ];
 
   nixpkgs.config.allowUnfree = true;
