@@ -117,7 +117,7 @@
     cspell
     brightnessctl
     pamixer
-
+    libreoffice
  ];
 
   # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
