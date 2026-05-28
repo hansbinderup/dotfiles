@@ -31,6 +31,14 @@
   # Set your time zone.
   time.timeZone = "Europe/Copenhagen";
 
+  # NixOS gets timezones from its store, but some programs/scripts assume a vanilla timezone folder,
+  system.activationScripts.zoneinfo = {
+    text = ''
+      rm -rf /usr/share/zoneinfo
+      ln -sf ${pkgs.tzdata}/share/zoneinfo /usr/share/zoneinfo
+    '';
+  };
+
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
