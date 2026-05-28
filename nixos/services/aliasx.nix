@@ -1,6 +1,6 @@
 { pkgs, ... }:
 let
-  version = "0.2.1";
+  version = "0.2.2";
 in
 {
   environment.systemPackages = with pkgs; [
@@ -11,7 +11,7 @@ in
       src = pkgs.fetchurl {
         url = "https://github.com/hansbinderup/aliasx/releases/download/${version}/aliasx-${version}";
         # hash can be found on the releases page next to the asset
-        sha256 = "496d1191074a478014be504802204c9bbb217e4867e8f04b8ef0fefaf3cd0817";
+        sha256 = "1kywdis5j7vv5pii22cvvqf3z3qbz8mbxy16awfq7kck2xfs8sds";
       };
 
       nativeBuildInputs = [ pkgs.autoPatchelfHook ];
