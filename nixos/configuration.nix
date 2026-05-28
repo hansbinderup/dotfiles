@@ -22,6 +22,8 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -86,6 +88,7 @@
 
   programs.firefox.enable = true;
   programs.hyprland.enable = true;
+  programs.steam.enable = true;
 
   environment.systemPackages = with pkgs; [
     wget
@@ -118,6 +121,13 @@
     brightnessctl
     pamixer
     libreoffice
+    discord
+    uv
+    signal-desktop
+    gdb
+    unzip
+    tmate
+    sl
  ];
 
   # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
