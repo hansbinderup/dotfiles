@@ -16,8 +16,14 @@
             la = "eza -la";
             grep = "grep --color=auto";
         };
+
         promptInit = ''
-          PS1="\[\e]2;\h:\u:\w\a\]\[\e[1;32m\]\u@\h\[\e[0m\]:\[\e[1;34m\]\w\[\e[0m\]\$ "
+          _nix_shell_indicator() {
+            if [ -n "$IN_NIX_SHELL" ]; then
+              echo -n $'\001\e[1;36m\002(nix-shell) \001\e[0m\002'
+            fi
+          }
+          PS1="\[\e]2;\h:\u:\w\a\]\$(_nix_shell_indicator)\[\e[1;32m\]\u@\h\[\e[0m\]:\[\e[1;34m\]\w\[\e[0m\]\$ "
         '';
   };
 
