@@ -17,6 +17,7 @@
       ./services/docker.nix
       ./services/jlink.nix
       ./services/saleae-logic.nix
+      ./services/python-dev.nix
     ];
 
   nixpkgs.config.allowUnfree = true;

@@ -63,6 +63,12 @@ return {
                 capabilities = capabilities,
             })
 
+            vim.lsp.enable('pylsp')
+            vim.lsp.config('pylsp', {
+                on_attach = on_attach,
+                capabilities = capabilities,
+            })
+
             -- Disabled language servers (uncomment to enable):
             -- vim.lsp.config('dartls', { on_attach = on_attach })
             -- vim.lsp.config('pylsp', { on_attach = on_attach })
